@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="A0810_1"/>
+<aop-project name="A0810_2-mapper"/>
+<aop-project name="A0810_3-myBatisXML"/>
+<aop-project name="A0810_1-test"/>
 </aop-reference-model>

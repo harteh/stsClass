@@ -11,5 +11,7 @@ E:\26.newJava\stsClass\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\164
 \A0810_2-mapper\src\main\java
 E:\26.newJava\stsClass\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3640280722.index
 \A0808_1\src\main\java
+E:\26.newJava\stsClass\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\878511963.index
+\A0810_3-myBatisXML\src\main\java
 E:\26.newJava\stsClass\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2370979807.index
 \A0810_3\src\main\java

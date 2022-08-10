@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="co.sol.mapper.BMapper">
+	<select resultType="co.sol.main.BVO" id="getList">
+		select * from t_board order by bnum desc
+	</select>
+	<!-- <insert parameterType="co.sol.main.BVO" id="addList">
+		<![CDATA[[
+			insert into t_board(bnum, title, content, writer, redate, updatedate) 
+			values (#{bnum}, #{title}, #{content}, #{writer}, #{redate}, #{updatedate});
+		]]>
+	</insert> -->
+</mapper>
