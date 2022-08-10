@@ -1,5 +1,5 @@
 #Tomcat publish data
-#Wed Aug 10 13:14:29 KST 2022
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\harteh\\.m2\\repository\\org\\springframework\\spring-web\\5.2.7.RELEASE\\spring-web-5.2.7.RELEASE.jar=C\:\\Users\\harteh\\Downloads\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\A0810_1\\WEB-INF\\lib\\spring-web-5.2.7.RELEASE.jar
-org.eclipse.jst.jee.server\:A0810_1=C\:\\Users\\harteh\\Downloads\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\A0810_1
+#Wed Aug 10 16:22:26 KST 2022
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\harteh\\.m2\\repository\\org\\springframework\\spring-web\\5.2.7.RELEASE\\spring-web-5.2.7.RELEASE.jar=C\:\\Users\\harteh\\Downloads\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\A0810_2-mapper\\WEB-INF\\lib\\spring-web-5.2.7.RELEASE.jar
+org.eclipse.jst.jee.server\:A0810_2-mapper=C\:\\Users\\harteh\\Downloads\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\A0810_2-mapper
 org.eclipse.jst.jee.server\:A0808_1=C\:\\Users\\harteh\\Downloads\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\A0808_1
