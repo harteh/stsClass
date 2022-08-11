@@ -18,4 +18,5 @@ public interface BService {
 	boolean del(int bnum);
 	//글 전체 조회
 	List<BVO> getList();
+	
 }

@@ -24,7 +24,7 @@
 		insert into t_board(bnum, title, content, writer) values (seq_bo.nextval, #{title}, #{content}, #{writer})
 	</insert>
 	
-	<!-- 게시물 추가 후 selectKey 추출 -->
+	<!-- 게시물 추가 전 selectKey 추출 -->
 	<insert id="inkey">
 		<!-- seq_bo.nextval를 추출(PK)을 해서 insert 실행 시 추가한다 
 			keyProperty :  저장할 변수?			order : 추출 실행 시점		-->
