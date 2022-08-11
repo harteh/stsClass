@@ -2,13 +2,36 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="co.sol.mapper.BMapper">
-	<select resultType="co.sol.main.BVO" id="getList">
-		select * from t_board order by bnum desc
+	<sql id="boardSelect">
+		<!-- 기본 조회 sql, 재사용을 위해서 정의 -->
+		select * from t_board
+	</sql>
+
+	<!-- 전체 조회  -->
+	<select id="getList" resultType="co.sol.main.BVO" >
+		<include refid="boardSelect"></include>
+		order by bnum desc
 	</select>
-	<!-- <insert parameterType="co.sol.main.BVO" id="addList">
-		<![CDATA[[
-			insert into t_board(bnum, title, content, writer, redate, updatedate) 
-			values (#{bnum}, #{title}, #{content}, #{writer}, #{redate}, #{updatedate});
-		]]>
-	</insert> -->
+
+	<!-- 1건 조회  -->
+	<select id="getBoardOne" resultType="co.sol.main.BVO">
+		<include refid="boardSelect"></include>
+		WHERE bnum=#{bnum}
+	</select>
+
+	<!-- 게시물 추가  -->
+	<insert id="insert"> <!-- parameterType="co.sol.main.BVO"  -->
+		insert into t_board(bnum, title, content, writer) values (seq_bo.nextval, #{title}, #{content}, #{writer})
+	</insert>
+	
+	<!-- 게시물 수정  -->
+	<update id="up">
+		UPDATE t_board 
+ 		SET title=#{title}, content=#{content}, writer=#{writer}, updateDate=sysdate 
+ 		WHERE bnum=#{bnum}
+	</update>
+	
+	<delete id="del">
+		delete from t_board where bnum=#{bnum}
+	</delete>
 </mapper>
