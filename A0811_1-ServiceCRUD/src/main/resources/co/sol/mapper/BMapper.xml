@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="co.sol.mapper.BMapper">
+	<!-- 기본 조회 sql, 재사용을 위해서 정의 -->
+	<sql id="boardSelect">
+		select * from t_board
+	</sql>
+
+	<!-- 전체 조회  -->
+	<select id="getList" resultType="co.sol.main.BVO" >
+		<include refid="boardSelect"></include>
+		order by bnum desc
+	</select>
+
+	<!-- 1건 조회  -->
+	<select id="getBoardOne" resultType="co.sol.main.BVO">
+		<include refid="boardSelect"></include>
+		WHERE bnum=#{bnum}
+	</select>
+
+	<!-- 게시물 추가  -->
+	<insert id="insert"> <!-- parameterType="co.sol.main.BVO"  -->
+		insert into t_board(bnum, title, content, writer) values (seq_bo.nextval, #{title}, #{content}, #{writer})
+	</insert>
+	
+	<!-- 게시물 추가 후 selectKey 추출 -->
+	<insert id="inkey">
+		<!-- seq_bo.nextval를 추출(PK)을 해서 insert 실행 시 추가한다 
+			keyProperty :  저장할 변수?			order : 추출 실행 시점		-->
+		<selectKey keyProperty="bnum" order="BEFORE" resultType="long">
+			select seq_bo.nextval from dual
+		</selectKey>
+		insert into t_board(bnum, title, content, writer) values (#{bnum}, #{title}, #{content}, #{writer})
+	</insert>
+	
+	
+	<!-- 게시물 수정  -->
+	<update id="up">
+		UPDATE t_board 
+ 		SET title=#{title}, content=#{content}, writer=#{writer}, updateDate=sysdate 
+ 		WHERE bnum=#{bnum}
+	</update>
+	
+	<!-- 게시물 삭제 -->
+	<delete id="del">
+		delete from t_board where bnum=#{bnum}
+	</delete>
+</mapper>
