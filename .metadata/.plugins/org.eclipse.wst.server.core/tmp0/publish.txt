@@ -1,5 +1,6 @@
 #Tomcat publish data
-#Thu Aug 11 14:59:00 KST 2022
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\harteh\\.m2\\repository\\org\\springframework\\spring-web\\5.2.7.RELEASE\\spring-web-5.2.7.RELEASE.jar=C\:\\Users\\harteh\\Downloads\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\A0810_3-myBatisXML\\WEB-INF\\lib\\spring-web-5.2.7.RELEASE.jar
+#Sat Aug 13 17:07:16 KST 2022
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\harteh\\.m2\\repository\\org\\springframework\\spring-web\\5.2.7.RELEASE\\spring-web-5.2.7.RELEASE.jar=C\:\\Users\\harteh\\Downloads\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\Pj-kakaoLogin\\WEB-INF\\lib\\spring-web-5.2.7.RELEASE.jar
+org.eclipse.jst.jee.server\:Pj-kakaoLogin=C\:\\Users\\harteh\\Downloads\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\Pj-kakaoLogin
 org.eclipse.jst.jee.server\:A0808_1=C\:\\Users\\harteh\\Downloads\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\A0808_1
 org.eclipse.jst.jee.server\:A0810_3-myBatisXML=C\:\\Users\\harteh\\Downloads\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\A0810_3-myBatisXML
