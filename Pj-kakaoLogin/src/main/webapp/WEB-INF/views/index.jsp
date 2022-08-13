@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>카카오로 로그인하기</title>
+<title>JS 카카오 로그인</title>
 <!-- Bootstrap CDN -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -19,6 +19,7 @@
 	
 </head>
 <body class="text-center mt-5">
+	<h3>JS 카카오 로그인하기</h3>
 	
 	<!-- 로그인 버튼 부분 -->
 	<main class="form-signin w-50 m-auto ">

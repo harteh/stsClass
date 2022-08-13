@@ -28,8 +28,9 @@
 	
 		<main>
 		<h1>${sessionScope.uName }님</h1>
-		<p class="fs-5 col-md-8">입력하신 정보를 확인하세요<br>
-			메일: ${sessionScope.uEmail } 아이디: ${sessionScope.uId } 비밀번호: ${sessionScope.pwd }<br>
+		<p class="fs-5 col-md-8">로그인 정보<br>
+			닉네임: ${nickname } <br>
+			아이디: ${sessionScope.uId } 비밀번호: ${sessionScope.pwd }<br>
 			<%-- <span class="errMessage">알러지: ${sessionScope.allergy }</span> --%>
 		</p>
 	
