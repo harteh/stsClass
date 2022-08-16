@@ -33,7 +33,11 @@
                     <tbody>
                     <c:forEach items="${list }" var="bo">
                         <tr class="odd gradeX">
-                            <td>${bo.bnum }</td>
+                            <td>
+	                            <a href="get?bnum=${bo.bnum }">
+	                            	${bo.bnum }
+	                            </a>
+                            </td>
                             <td>${bo.title }</td>
                             <td>${bo.writer }</td>
                             <td class="center">
@@ -43,7 +47,7 @@
                             	<fmt:formatDate value="${bo.updatedate }" pattern="yy-MM-dd"/>
                             </td>
                         </tr>
-                     	</c:forEach>
+                     </c:forEach>
 					</tbody>
 				</table>
 			</div>

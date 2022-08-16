@@ -56,6 +56,13 @@ public class BControllerTests {
 				.param("writer", "modify 작성자")).andReturn());
 	}
 	
+	@Test
+	public void testGet() throws Exception {
+		log.info(mc.perform(
+				MockMvcRequestBuilders.get("/board/get")
+				.param("bnum", "201")).andReturn());
+	}
+	
 
 	@Test
 	public void testDel() throws Exception {

@@ -46,6 +46,8 @@ public class BController {
 		
 		return "redirect:/board/list";
 	}
+	
+	//글 한개 가져오기
 	@GetMapping("/get")
 	public void get(@RequestParam("bnum") int bnum, Model m) {
 		m.addAttribute("board", service.get(bnum));
