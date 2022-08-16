@@ -28,6 +28,11 @@ public class BController {
 		m.addAttribute("list", service.getList());
 	}
 	
+	//폼 입력하는 부분
+	@GetMapping("/submit")
+	public void sub() { }
+	
+	
 	/** 글 등록 이후 목록페이지로 넘어갈 때 
 	 * 글 번호를 같이 가지고 간다	 -> ()번 글이 등록되었습니다.
 	 */
@@ -40,6 +45,10 @@ public class BController {
 		rt.addFlashAttribute("result", bnum);
 		
 		return "redirect:/board/list";
+	}
+	@GetMapping("/get")
+	public void get(@RequestParam("bnum") int bnum, Model m) {
+		m.addAttribute("board", service.get(bnum));
 	}
 	
 	@PostMapping("/modify")
