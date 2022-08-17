@@ -16,6 +16,8 @@
          <div class="panel-heading">수정/삭제</div>
          <!-- /.panel-heading -->
          <div class="panel-body">
+         
+         <form role="form" action="/board/modify" method="post">
 
             <div class="form-group">
                <label>글번호</label> 
@@ -39,10 +41,12 @@
                <label>글쓴이</label> <input class="form-control" name="writer"
                   value='<c:out value="${board.writer}"/>' readonly="readonly">
             </div>
-            <button data-oper='modify' class="btn btn-default">수정</button>
-            <button data-oper='del' class="btn btn-danger">삭제</button>
-            <button data-oper='list' class="btn btn-info">리스트</button>
-
+            
+            <button type="submit" data-oper='modify' class="btn btn-default">수정</button>
+            <button type="submit" data-oper='del' class="btn btn-danger">삭제</button>
+            <button type="submit" data-oper='list' class="btn btn-info">리스트</button>
+			</form>
+			
          </div>
          <!-- /.panel-body -->
       </div>

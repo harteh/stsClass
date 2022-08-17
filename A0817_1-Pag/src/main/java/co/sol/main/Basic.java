@@ -21,7 +21,7 @@ public class Basic {
 	}
 
 	public Basic() {
-		this(1, 10);
+		this(1, 5);
 	}
 
 }

@@ -51,18 +51,29 @@
 					</tbody>
 				</table>
 			
-			<!-- 페이징 -->
-			<c:if test="${paging.prev }">
-				<a href="#">Previous</a>
-			</c:if>
-				
-			<c:forEach var="num" begin="${paging.start }" end="${paging.end }">
-				<a href="#">${num }</a> 
-			</c:forEach>
+			<div class='pull-right'>
+				<ul class="pagination">
+
+					<c:if test="${paging.prev}">
+						<li class="paginate_button previous"><a
+							href="${paging.start -1}">Previous</a></li>
+					</c:if>
+
+					<c:forEach var="num" begin="${paging.start}" end="${paging.end}">
+						<%-- <li class="paginate_button"><a href="#">${num}</a></li> --%>
+						<li class="paginate_button  ${paging.ba.pNum == num ?" active":""}">
+							<a href="${num}">${num}</a>
+						</li>
+					</c:forEach>
+
+					<c:if test="${paging.next}">
+						<li class="paginate_button next"><a
+							href="${paging.end +1 }">Next</a></li>
+					</c:if>
+				</ul>
+			</div>
+			<!--  end Pagination -->
 			
-			<c:if test="${paging.next }">
-				<a href="#">Next</a>
-			</c:if>
 			
 
 			</div>

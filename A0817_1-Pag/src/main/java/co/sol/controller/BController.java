@@ -28,6 +28,7 @@ public class BController {
 		
 		log.info("목록 전체 가져오기");
 		m.addAttribute("list", service.getPage(ba));
+		
 		m.addAttribute("paging", new PageDTO(ba, 134));
 	}
 	
