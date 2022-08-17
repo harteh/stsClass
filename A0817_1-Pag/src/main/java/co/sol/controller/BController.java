@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import co.sol.main.BVO;
+import co.sol.main.Basic;
+import co.sol.main.PageDTO;
 import co.sol.service.BService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -22,10 +24,11 @@ public class BController {
 	private final BService service;
 	
 	@GetMapping("/list")
-	public void list(Model m) {
+	public void list(Model m, Basic ba) {
 		
 		log.info("목록 전체 가져오기");
-		m.addAttribute("list", service.getList());
+		m.addAttribute("list", service.getPage(ba));
+		m.addAttribute("paging", new PageDTO(ba, 134));
 	}
 	
 	//폼 입력하는 부분

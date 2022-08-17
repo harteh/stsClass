@@ -50,6 +50,21 @@
                      </c:forEach>
 					</tbody>
 				</table>
+			
+			<!-- 페이징 -->
+			<c:if test="${paging.prev }">
+				<a href="#">Previous</a>
+			</c:if>
+				
+			<c:forEach var="num" begin="${paging.start }" end="${paging.end }">
+				<a href="#">${num }</a> 
+			</c:forEach>
+			
+			<c:if test="${paging.next }">
+				<a href="#">Next</a>
+			</c:if>
+			
+
 			</div>
 		</div>
 	</div>

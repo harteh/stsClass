@@ -7,6 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import co.sol.main.BVO;
+import co.sol.main.Basic;
 import lombok.extern.log4j.Log4j;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -79,6 +80,13 @@ public class BMapperTests {
 	public void delete() {
 		log.info("board delete -----------");
 		log.info(bm.del(61));
+	}
+	
+	
+	
+	public void getPage() {
+		Basic bb = new Basic();
+		log.info(bm.getPage(bb));
 	}
 
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import co.sol.main.BVO;
+import co.sol.main.Basic;
 import co.sol.mapper.BMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -52,6 +53,11 @@ public class BServiceImpl implements BService{
 	public int del(int bnum) {
 		return mapper.del(bnum);
 		//해당 글이 있으면 1(true)를 반환하여 test 실행
+	}
+
+	@Override
+	public List<BVO> getPage(Basic ba) {
+		return mapper.getPage(ba);
 	}
 
 }

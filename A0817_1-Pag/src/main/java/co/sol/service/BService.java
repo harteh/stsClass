@@ -3,6 +3,7 @@ package co.sol.service;
 import java.util.List;
 
 import co.sol.main.BVO;
+import co.sol.main.Basic;
 
 public interface BService {
 
@@ -22,5 +23,10 @@ public interface BService {
 	
 	//글 전체 조회
 	List<BVO> getList();
+	
+	
+	//페이징
+	List<BVO> getPage(Basic ba);
+	
 	
 }

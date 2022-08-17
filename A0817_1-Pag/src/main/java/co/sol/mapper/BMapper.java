@@ -3,6 +3,7 @@ package co.sol.mapper;
 import java.util.List;
 
 import co.sol.main.BVO;
+import co.sol.main.Basic;
 
 public interface BMapper {
 
@@ -19,5 +20,8 @@ public interface BMapper {
 	public int up(BVO vo);
 	//삭제
 	public int del(int bnum);
+	
+	
+	public List<BVO> getPage(Basic ba);
 	
 }
