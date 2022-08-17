@@ -60,9 +60,8 @@
 					</c:if>
 
 					<c:forEach var="num" begin="${paging.start}" end="${paging.end}">
-						<%-- <li class="paginate_button"><a href="#">${num}</a></li> --%>
-						<li class="paginate_button  ${paging.ba.pNum == num ?" active":""}">
-							<a href="${num}">${num}</a>
+						<li class="paginate_button">
+							<a href='list?pNum=${num }&amount=${paging.ba.amount }'>${num}</a>
 						</li>
 					</c:forEach>
 
