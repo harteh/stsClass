@@ -31,9 +31,9 @@
 		         rownum rn, bnum, title, writer, redate, updatedate
 		       from 
 		         t_board
-		      where rownum<=(#{pNum} * #{amount})
+		      where rownum<=(#{pageNum} * #{amount})
 		      )
-		  where rn > (#{pNum} -1)* #{amount}
+		  where rn > (#{pageNum} -1)* #{amount}
 	  ]]>
 	</select>
 	

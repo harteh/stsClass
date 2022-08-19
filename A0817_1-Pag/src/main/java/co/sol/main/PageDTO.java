@@ -19,7 +19,7 @@ public class PageDTO {
 		this.ba=ba;
 		this.total = t;
 		
-		this.end = (int)(Math.ceil(ba.getPNum()/10.0)) *10;		//10
+		this.end = (int)(Math.ceil(ba.getPageNum()/10.0)) *10;		//10
 		this.start = this.end-9;
 	
 		

@@ -10,13 +10,13 @@ import lombok.ToString;
 @ToString
 public class Basic {
 	
-	private int pNum;
+	private int pageNum;
 	private int amount;
 
 	
 	public Basic(int pNum, int amount) {
 		super();
-		this.pNum = pNum;
+		this.pageNum = pNum;
 		this.amount = amount;
 	}
 
