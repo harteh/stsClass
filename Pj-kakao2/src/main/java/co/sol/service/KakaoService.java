@@ -9,14 +9,21 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import co.sol.dto.KakaoDTO;
+import co.sol.repository.MemberRepository;
+
 @Service
 public class KakaoService {
+	
+	@Autowired
+	private MemberRepository mr;
 	
     public String getAccessToken (String authorize_code) {
         String access_Token = "";
@@ -78,7 +85,7 @@ public class KakaoService {
     
     
     
-    public HashMap<String, Object> getUserInfo (String access_Token) {
+    public KakaoDTO getUserInfo (String access_Token) {
 
         //    요청하는 클라이언트마다 가진 정보가 다를 수 있기에 HashMap타입으로 선언
         HashMap<String, Object> userInfo = new HashMap<>();
@@ -121,8 +128,21 @@ public class KakaoService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        
+        // 코드 추가
+        KakaoDTO result = mr.findkakao(userInfo);
+        
+        //저장된 정보가 있는지 확인하는 코드
+        if(result == null) {
+        	mr.kakaoinsert(userInfo);
+        	
+        	//정보 저장 후 컨트롤러에 정보를 전달
+        	return mr.findkakao(userInfo);
+        } else {
+        	//저장된 정보가 있으면 result를 전송한다
+        	return result;
+        }
 
-        return userInfo;
     } 
     
 

@@ -9,7 +9,6 @@
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
 
-<!-- DB를 위한 설정   -->
 	<bean class="com.zaxxer.hikari.HikariConfig" id="hikariConfig">
 		<property value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"
 			name="driverClassName" />
@@ -20,37 +19,17 @@
 		<property value="bm0301" name="password" />
 	</bean>
 
+	<!-- myBatis: SQLSession을 통해서 Connection을 생성하거나 SQL을 전달하고 결과를 리턴받는다  -->
 	<bean class="com.zaxxer.hikari.HikariDataSource" id="dataSource"
 		destroy-method="close">
 		<constructor-arg ref="hikariConfig" />
 	</bean>
 
-	<!-- 현재 프로젝트 패키지 경로 맞는지 확인 -->
-	<bean class="org.mybatis.spring.SqlSessionFactoryBean"
-		id="sqlSessionFactory">
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
 		<property name="dataSource" ref="dataSource" />
-		<!-- 에러시 추가 
-		<property name="mapperLocations" value="classpath:/co/sol/mapper/*.xml" />
-		-->
-	</bean>
-		
-		<!-- 에러시  추가	-->
-	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 
-	<!-- 에러 때문에 추가함:No qualifying bean of type 'org.mybatis.spring.SqlSessionTemplate'
-		
-	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
-		<constructor-arg name="sqlSessionFactory" ref="sqlSession"></constructor-arg>
-	</bean>
-	  -->
-
-<!-- 빈등록
-<mybatis-spring:scan base-package="co.sol.mapper"/>
-  -->
-
-<context:component-scan base-package="co.sol.service" />
-<context:component-scan base-package="co.sol.repository" />
+<mybatis-spring:scan base-package="co.bm.mapper"/>
+<!-- <context:component-scan base-package="co.sol.service"/> -->
 
 </beans>

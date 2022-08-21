@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="co.bm.mapper.MemMapper">
+	<select id="getMemList" resultType="co.bm.domain.MemberVO">
+	<![CDATA[
+		select * from ex1_User where user_id > 0
+	]]>
+	</select>
+	
+	<select id="getMem" resultType="co.bm.domain.MemberVO">
+		select * from ex1_User where 
+		user_id = #{user_id} 
+	</select>
+	
+	<insert id="joinMem">
+		<selectKey keyProperty="user_id" order="BEFORE" resultType="long">
+			select seq_ex1_User.nextval from dual
+		</selectKey>
+		insert into ex1_User(user_id, email, nickname, password, user_name, phone, addr, user_grade) 
+		values (#{user_id}, #{email}, #{nickname}, 
+		#{password}, #{user_name}, #{phone}, #{addr}, #{user_grade})
+	</insert>
+
+</mapper>
