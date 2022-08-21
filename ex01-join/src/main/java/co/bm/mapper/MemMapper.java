@@ -2,9 +2,6 @@ package co.bm.mapper;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-
 import co.bm.domain.MemberVO;
 
 public interface MemMapper {
@@ -15,7 +12,7 @@ public interface MemMapper {
 	public List<MemberVO> getMemList();
 	
 	//1명 회원 정보 조회
-	public MemberVO getMem(int user_id);
+	public MemberVO getMem(long user_id);
 	
 	//회원가입
 	public void joinMem(MemberVO mvo);

@@ -24,23 +24,23 @@ public class MemMapperTests {
 	
 	@Test 
 	public void testGetMem() {
-		MemberVO mvo = mapper.getMem(3);
+		MemberVO mvo = mapper.getMem(3L);
 		log.info(mvo);
 	}
 	
 	@Test
 	public void testJoinMem() {
 		MemberVO mvo = new MemberVO();
-		mvo.setUser_id((long) 1);
+		mvo.setUser_id(1L);
 		mvo.setEmail("testUser1@naver.com");
 		mvo.setNickname("테스트유저1");
 		mvo.setPassword("1111");
 		mvo.setUser_name("test1");
 		mvo.setPhone("010-0001-0001");
 		mvo.setAddr("서울시 중구 1111");
-		mvo.setUser_grade((long)1);
+		mvo.setUser_grade(1L);
 		
 		mapper.joinMem(mvo);
 	}
-
+	
 }

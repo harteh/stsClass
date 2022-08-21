@@ -30,6 +30,6 @@
 	</bean>
 
 <mybatis-spring:scan base-package="co.bm.mapper"/>
-<!-- <context:component-scan base-package="co.sol.service"/> -->
+<context:component-scan base-package="co.bm.service"/>
 
 </beans>
