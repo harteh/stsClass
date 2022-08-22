@@ -12,21 +12,22 @@ import lombok.extern.log4j.Log4j;
 @RequiredArgsConstructor
 public class MemServiceImpl implements MemService {
 	
-	private final MemMapper dao;
+	private final MemMapper mapper;
 
 	@Override
 	public MemberVO registerMem(MemberVO member) {
 		// 회원 가입
 		log.info("MemServiceImpl reg ------------");
-		dao.joinMem(member);
+		mapper.joinMem(member);
 		return member;
 	}
 
 	@Override
-	public MemberVO getMemById(long user_id) {
+	public MemberVO getMemById(MemberVO member) {
 		// id로 회원 정보 가져오기
 		log.info("MemServiceImpl getMemById ------------");
-		return dao.getMemById(user_id);
+		return mapper.getMemById(member);
 	}
+
 
 }

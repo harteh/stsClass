@@ -8,6 +8,6 @@ public interface MemService {
 	MemberVO registerMem(MemberVO member);
 	
 	//id로 회원 조회하기
-	MemberVO getMemById(long user_id);
+	MemberVO getMemById(MemberVO member);
 
 }

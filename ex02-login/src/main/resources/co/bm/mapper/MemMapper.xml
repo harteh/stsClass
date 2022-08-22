@@ -3,7 +3,8 @@
 
 <mapper namespace="co.bm.mapper.MemMapper">
 	<select id="getMemById" resultType="co.bm.domain.MemberVO">
-		select * from ex1_User where user_id = #{user_id} 
+		select * from ex1_User 
+		where user_id = #{user_id} and password = #{password} 
 	</select>
 	
 	<insert id="joinMem">

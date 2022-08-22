@@ -17,9 +17,7 @@
 <body class="text-center mt-5">
 	<main class="form-signin w-50 m-auto ">
 		<h1>임시 메인 화면</h1>
-		<p> ${user_id }  ${nickname } </p>
-		<p> ${sessionScope.user_id }  ${sessionScope.nickname } </p>
-		<p> ${message }  </p>
+		<p>3: ${mem.user_id } // ${mem.nickname } // ${mem.email }</p>
 		
 		
 		<a href="login" class="w-75 btn btn-lg btn-warning">로그인</a><br><br>

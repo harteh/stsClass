@@ -36,21 +36,21 @@ public class MemController {
 	
 	//로그인 처리
 	@PostMapping("/loginProc")
-	public String loginProc(@RequestParam("user_id") Long user_id, 
-			Model model, HttpSession session) {
+	public String loginProc( MemberVO member, HttpSession session) {
+		/*  @RequestParam("user_id") Long user_id,  @RequestParam("password") String password, */
 		
-		MemberVO member = service.getMemById(user_id);
-		log.info("loginProc---" + user_id);
+		MemberVO mem = service.getMemById(member);
+		log.info("loginProc = " + mem);
 		
-		if(member == null) {
-			model.addAttribute("message", "id나 비번이 틀립니다");
-			return "login";
+		if(mem == null) {
+			log.info("로그인 실패");
+			return "/member/login";
 		} else {
 			// ================
 			// 로그인 성공
-			session.setAttribute("member", member);
-			session.setAttribute("user_id", member.getUser_id());
-			session.setAttribute("nickname", member.getNickname());
+			session.setAttribute("mem", mem);
+			session.setAttribute("user_id", mem.getUser_id());
+			session.setAttribute("nickname", mem.getNickname());
 			return "redirect:/member/indexMem";
 		}
 		

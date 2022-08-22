@@ -7,5 +7,5 @@ public interface MemMapper {
 	public void joinMem(MemberVO member);
 	
 	//id로 회원정보 가져오기
-	public MemberVO getMemById(long user_id);
+	public MemberVO getMemById(MemberVO member);
 }
