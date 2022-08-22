@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="co.bm.mapper.MemMapper">
+<mapper namespace="co.bm.dao.MemberDAO">
 	<select id="getMemList" resultType="co.bm.domain.MemberVO">
 	<![CDATA[
 		select * from ex1_User where user_id > 0

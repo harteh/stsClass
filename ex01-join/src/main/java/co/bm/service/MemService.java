@@ -14,5 +14,9 @@ public interface MemService {
 	
 	//회원 1명 조회
 	MemberVO getMem(long user_id);
+	
+	//로그인
+	MemberVO login(long user_id, String password);
+	
 
 }

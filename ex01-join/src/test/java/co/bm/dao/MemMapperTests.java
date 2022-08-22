@@ -1,4 +1,4 @@
-package co.bm.mapper;
+package co.bm.dao;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import co.bm.dao.MemMapper;
 import co.bm.domain.MemberVO;
 import lombok.extern.log4j.Log4j;
 
@@ -15,16 +16,16 @@ import lombok.extern.log4j.Log4j;
 public class MemMapperTests {
 	
 	@Autowired
-	private MemMapper mapper;
+	private MemMapper dao;
 	
 	@Test
 	public void testGetMemList() {
-		mapper.getMemList().forEach(mamber -> log.info(mamber));
+		dao.getMemList().forEach(mamber -> log.info(mamber));
 	}
 	
 	@Test 
 	public void testGetMem() {
-		MemberVO mvo = mapper.getMem(3L);
+		MemberVO mvo = dao.getMem(3L);
 		log.info(mvo);
 	}
 	
@@ -40,7 +41,7 @@ public class MemMapperTests {
 		mvo.setAddr("서울시 중구 1111");
 		mvo.setUser_grade(1L);
 		
-		mapper.joinMem(mvo);
+		dao.joinMem(mvo);
 	}
 	
 }

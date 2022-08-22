@@ -1,4 +1,4 @@
-package co.bm.mapper;
+package co.bm.dao;
 
 import java.util.List;
 
@@ -14,7 +14,11 @@ public interface MemMapper {
 	//1명 회원 정보 조회
 	public MemberVO getMem(long user_id);
 	
+	
 	//회원가입
 	public void joinMem(MemberVO mvo);
+	
+	//로그인
+	public MemberVO login(MemberVO member);
 
 }
