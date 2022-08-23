@@ -12,10 +12,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body class="mt-5">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4 col-md-offset-4">
+			<div class="col-md-4 col-md-offset-4 m-auto">
 				<div class="login-panel panel panel-default">
 					<div class="panel-heading">
 						<h3 class="panel-title">Please Sign In</h3>
@@ -34,7 +34,7 @@
 								<div class="checkbox">
 									<label> <input name="remember-me" type="checkbox">Remember Me</label>
 								</div>
-								<button class="btn btn-lg btn-success btn-block" type="submit">로그인</button>
+								<button class="btn w-100 btn-lg btn-warning " type="submit">로그인</button>
 							</fieldset>
 						</form>
 

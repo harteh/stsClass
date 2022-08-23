@@ -17,22 +17,20 @@
 <body class="text-center mt-5">
 	<main class="form-signin w-50 m-auto ">
 		<h1>임시 메인 화면</h1>
-		1: ${loginMem.user_id } / ${member.user_id } / ${user_id }<br>
 		
 		<c:set var="userID" value="${mem.user_id}" />
 		<c:choose>
 			<c:when test="${empty userID}">
 				<p>로그인 전</p>
+				<a href="join" class="w-75 btn btn-lg btn-outline-warning">회원가입</a><br><br>
 				<a href="login" class="w-75 btn btn-lg btn-warning">로그인</a><br><br>
-				<a href="join" class="w-75 btn btn-lg btn-warning">회원가입</a><br><br>
 			</c:when>
 			
 			<c:when test="${!empty userID}">
-				로그인 성공
-				<p>2: ${mem.user_id } // ${mem.nickname } // ${mem.email }</p>
-				<p>3:${mem2.user_id } // ${mem2.nickname } // ${mem2.email }</p>
-				<a href="login" class="w-75 btn btn-lg btn-warning">마이페이지</a><br><br>
-				<a href="join" class="w-75 btn btn-lg btn-danger">로그아웃</a><br><br>
+				${mem.user_name } 로그인 성공
+				<p>${mem.user_id } // ${mem.nickname } // ${mem.email }</p>
+				<a href="myPage" class="w-75 btn btn-lg btn-outline-warning">마이페이지</a><br><br>
+				<a href="logout" class="w-75 btn btn-lg btn-danger">로그아웃</a><br><br>
 			</c:when>
 		</c:choose>
 		
