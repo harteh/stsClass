@@ -13,4 +13,8 @@ public class MemberVO {
 	private String phone;
 	private String addr;
 	private Long user_grade;
+	
+	public MemberVO() {}
+	
+	
 }

@@ -20,7 +20,8 @@ public class MemServiceImpl implements MemService {
 	public MemberVO registerMem(MemberVO member) {
 		// 회원 가입
 		log.info("MemServiceImpl reg ------------");
-		mapper.joinMem(member);
+//		mapper.joinMem(member);
+		mapper.addMem(member);
 		return member;
 	}
 
@@ -30,7 +31,6 @@ public class MemServiceImpl implements MemService {
 		log.info("MemServiceImpl getMemById ------------");
 		
 		return mapper.getMemById(member);
-//		return mapper.getMemById(user_id);
 	}
 
 

@@ -25,75 +25,53 @@
     <div class="row g-5">
       <div class="col-md-7 col-lg-8 m-auto">
         <h4 class="mb-3">회원 정보</h4>
-        <form class="needs-validation" novalidate>
+        <!-- novalidate: 폼화면의 유효성 검사를 하지 않음을 명시한다 -->
+        <form class="needs-validation" role="form" method='post' action="joinProc">
           <div class="row g-3">
+			<input type="hidden" id="user_id">
+			
+            <div class="col-12">
+              <label for="email" class="form-label">이메일 </label>
+              <input type="text" class="form-control" name="email" id="email" placeholder="you@example.com" required>
+            </div>
           
             <div class="col-12">
               <label for="nickname" class="form-label">닉네임</label>
               <div class="input-group has-validation">
-                <!-- <span class="input-group-text">@</span> -->
-                <input type="text" class="form-control" id="nickname" placeholder="nickname" required>
-              <div class="invalid-feedback">
-                  Your nickname is required.
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label for="email" class="form-label">Email </label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com">
-              <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
+                <input type="text" class="form-control" name="nickname" id="nickname" placeholder="nickname" required>
               </div>
             </div>
           
             <div class="col-sm-6">
               <label for="password" class="form-label">비밀번호</label>
-              <input type="text" class="form-control" id="password" placeholder="" value="" required>
-              <div class="invalid-feedback">
-                Valid first password is required.
-              </div>
+              <input type="text" class="form-control" name="password" id="password" placeholder="" value="" required>
             </div>
 
-            <div class="col-sm-6">
+            <!-- <div class="col-sm-6">
               <label for="password-chk" class="form-label">비밀번호 확인</label>
               <input type="text" class="form-control" id="password-chk" placeholder="" value="" required>
-              <div class="invalid-feedback">
-                Valid last name is required.
-              </div>
-            </div>
-
+            </div> -->
 
             <div class="col-12">
-              <label for="addr" class="form-label">Address <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="addr" placeholder="1234 Main St" >
-              <div class="invalid-feedback">
-                Please enter your shipping address.
-              </div>
+              <label for="user_name" class="form-label">이름 <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" name="user_name" id="user_name" placeholder="">
             </div>
 
             <div class="col-12">
               <label for="phone" class="form-label">전화번호 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="phone" placeholder="010-1234-5678">
+              <input type="text" class="form-control" name="phone" id="phone" placeholder="010-1234-5678">
+            </div>
+
+            <div class="col-12">
+              <label for="addr" class="form-label">Address <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" name="addr" id="addr" placeholder="1234 Main St" >
             </div>
 
           </div>
 
-          <hr class="my-4">
+			<hr class="my-4">
 
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="same-address">
-            <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info">
-            <label class="form-check-label" for="save-info">Save this information for next time</label>
-          </div>
-
-          <hr class="my-4">
-
-          <button class="w-100 btn btn-primary btn-lg" type="submit">회원등록</button>
+          <button class="w-100 btn btn-warning btn-lg" type="submit">회원등록</button>
         </form>
       </div>
     </div>

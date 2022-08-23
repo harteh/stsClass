@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import co.bm.domain.MemberVO;
 import co.bm.service.MemService;
@@ -75,5 +74,18 @@ public class MemController {
 	//회원가입 폼으로 이동
 	@GetMapping("/join")
 	public void joinForm() {}
+	
+	//회원가입 처리
+	@PostMapping("/joinProc")
+	public String joinProc(MemberVO member) {
+		log.info("1. joinProc member ========== " + member);
+		
+		service.registerMem(member); 
+		
+//		log.info("joinProc ----------- " + regMem);
+//		log.info("joinProc ----------- " + regMem.getEmail());
+		
+		return "redirect:/member/login";
+	}
 
 }
