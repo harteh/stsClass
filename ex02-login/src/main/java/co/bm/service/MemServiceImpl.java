@@ -1,5 +1,7 @@
 package co.bm.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import co.bm.domain.MemberVO;
@@ -26,8 +28,20 @@ public class MemServiceImpl implements MemService {
 	public MemberVO getMemById(MemberVO member) {
 		// id로 회원 정보 가져오기
 		log.info("MemServiceImpl getMemById ------------");
+		
 		return mapper.getMemById(member);
+//		return mapper.getMemById(user_id);
 	}
+
+
+	@Override
+	public String loginChk(MemberVO member) {
+		// 로그인
+		String user_id = mapper.loginChk(member);
+		return user_id;
+	}
+
+	
 
 
 }

@@ -5,9 +5,10 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import co.bm.domain.MemberVO;
 import co.bm.service.MemService;
@@ -36,21 +37,23 @@ public class MemController {
 	
 	//로그인 처리
 	@PostMapping("/loginProc")
-	public String loginProc( MemberVO member, HttpSession session) {
-		/*  @RequestParam("user_id") Long user_id,  @RequestParam("password") String password, */
+	public String loginProc(@ModelAttribute MemberVO member, HttpSession session) {
 		
-		MemberVO mem = service.getMemById(member);
-		log.info("loginProc = " + mem);
+		String user_id = service.loginChk(member);
+		MemberVO loginMem = service.getMemById(member);
 		
-		if(mem == null) {
+		log.info("loginProc user_id = " + user_id);
+		log.info("loginProc loginMem = " + loginMem);
+		
+		if(loginMem == null) {
 			log.info("로그인 실패");
 			return "/member/login";
 		} else {
 			// ================
 			// 로그인 성공
-			session.setAttribute("mem", mem);
-			session.setAttribute("user_id", mem.getUser_id());
-			session.setAttribute("nickname", mem.getNickname());
+			session.setAttribute("mem", loginMem);
+			session.setAttribute("user_id", loginMem.getUser_id());
+			session.setAttribute("nickname", loginMem.getNickname());
 			return "redirect:/member/indexMem";
 		}
 		

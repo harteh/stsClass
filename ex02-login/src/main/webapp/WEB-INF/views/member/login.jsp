@@ -13,16 +13,45 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="login-panel panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Please Sign In</h3>
+					</div>
+					<div class="panel-body">
+						<form role="form" method='post' action="loginProc">
+							<fieldset>
+								<div class="form-group">
+									<input class="form-control" placeholder="userid"
+										name="user_id" type="text" autofocus>
+								</div>
+								<div class="form-group">
+									<input class="form-control" placeholder="Password"
+										name="password" type="password" value="">
+								</div>
+								<div class="checkbox">
+									<label> <input name="remember-me" type="checkbox">Remember Me</label>
+								</div>
+								<button class="btn btn-lg btn-success btn-block" type="submit">로그인</button>
+							</fieldset>
+						</form>
 
-<main class="form-signin w-50 mt-5 m-auto">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- <main class="form-signin w-50 mt-5 m-auto">
 	<form action="loginProc" method="post">
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-		<!-- 아이디 -->
+		아이디
         <div class="form-floating">
           <input name="user_id" type="text" class="form-control" id="floatingInput" placeholder="user_id" />
           <label for="floatingInput">아이디</label>
         </div>
-		<!-- 비밀번호 -->
+		비밀번호
         <div class="form-floating">
           <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" />
           <label for="floatingPassword">비밀번호</label>
@@ -31,7 +60,7 @@
         <button class="w-100 btn btn-lg btn-warning" type="submit">로그인</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2022-08-22</p>
 	</form>
-</main>
+</main> -->
 
 </body>
 </html>

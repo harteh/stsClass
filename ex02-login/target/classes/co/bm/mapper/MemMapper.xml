@@ -3,17 +3,30 @@
 
 <mapper namespace="co.bm.mapper.MemMapper">
 	<select id="getMemById" resultType="co.bm.domain.MemberVO">
-		select * from ex1_User 
-		where user_id = #{user_id} and password = #{password} 
+		<!-- select * from ex1_User where user_id = #{user_id} and password = #{password} --> 
+		select * from pj_user 
+		where 
+		user_id = #{user_id} and 
+		password = #{password} 
+	</select>
+	
+	<select id="loginChk" resultType="String">
+		select user_id from pj_user 
+		where 
+		user_id = #{user_id} and 
+		password = #{password}
 	</select>
 	
 	<insert id="joinMem">
 		<selectKey keyProperty="user_id" order="BEFORE" resultType="long">
-			select seq_ex1_User.nextval from dual
+			<!-- select seq_ex1_User.nextval from dual -->
+			select seq_user_id.nextval from dual
 		</selectKey>
-		insert into ex1_User(user_id, email, nickname, password, user_name, phone, addr, user_grade) 
+<!-- 		insert into ex1_User(user_id, email, nickname, password, user_name, phone, addr, user_grade) 
+		values (#{user_id}, #{email}, #{nickname}, #{password}, #{user_name}, #{phone}, #{addr}, #{user_grade}) -->
+		insert into pj_user(user_id, email, nickname, password, user_name, phone, addr) 
 		values (#{user_id}, #{email}, #{nickname}, 
-		#{password}, #{user_name}, #{phone}, #{addr}, #{user_grade})
+		#{password}, #{user_name}, #{phone}, #{addr})
 	</insert>	
 
 </mapper>
