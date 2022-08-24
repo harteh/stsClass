@@ -16,9 +16,9 @@
 	</select>
 	
 	<insert id="addMem">
-		insert into pj_user (user_id, email, nickname, password, user_name, phone, addr)
-		values (seq_user_id.nextval, #{email}, #{nickname}, 
-		#{password}, #{user_name}, #{phone}, #{addr})
+		insert into pj_user (user_id, email, nickname, password, user_name, phone, addr, addr2, zip_no)
+		values (#{user_id}, #{email}, #{nickname}, 
+		#{password}, #{user_name}, #{phone}, #{addr}, #{addr2}, #{zip_no})
 	</insert>
 	
 	<insert id="joinMem">
@@ -26,9 +26,9 @@
 			select seq_user_id.nextval from dual
 		</selectKey>
 		
-		insert into pj_user (user_id, email, nickname, password, user_name, phone, addr) 
+		insert into pj_user (user_id, email, nickname, password, user_name, phone, addr, addr2, zip_no) 
 		values (#{user_id}, #{email}, #{nickname}, 
-		#{password}, #{user_name}, #{phone}, #{addr})
+		#{password}, #{user_name}, #{phone}, #{addr}, #{addr2}, #{zip_no})
 	</insert>	
 
 </mapper>

@@ -13,5 +13,7 @@ public class MemberVO {
 	private String phone;
 	private String addr;
 	private Long user_grade;
+	private String zip_no;
+	private String addr2;
 	
 }
