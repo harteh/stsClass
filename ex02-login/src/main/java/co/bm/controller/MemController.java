@@ -1,9 +1,10 @@
 package co.bm.controller;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,7 +40,6 @@ public class MemController {
 			log.info("로그인 실패");
 			return "/member/login";
 		} else {
-			// ================
 			// 로그인 성공 하면 service에서 반환 받은 loginMem 을 세션에 담아서 메인 페이지로 이동한다
 			session.setAttribute("mem", loginMem);
 			return "redirect:/";
@@ -68,11 +68,15 @@ public class MemController {
 	
 	//회원가입 처리
 	@PostMapping("/joinProc")
-	public String joinProc(MemberVO member) {
+	public String joinProc(@Valid MemberVO member, BindingResult r) {
 		log.info("1. joinProc member ========== " + member);
-		service.registerMem(member); 
+		if(r.hasErrors()) {
+			return "/join";
+		}
 		
+		service.registerMem(member); 
 		return "redirect:/member/login";
 	}
+	
 
 }

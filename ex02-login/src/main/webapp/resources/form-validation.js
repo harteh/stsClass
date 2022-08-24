@@ -1,3 +1,8 @@
+//메일 중복 확인
+function mailChk(){
+	alert("메일을 확인해야 하는데..");
+}
+
 //비밀번호 확인
 function pwChk(){
 	var pw1 = document.getElementById('password').value;
@@ -28,16 +33,21 @@ function pwChk(){
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
   const forms = document.querySelectorAll('.needs-validation')
-
+  
   // Loop over them and prevent submission
   Array.from(forms).forEach(form => {
     form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
+    	
+    	
+   	  if (!form.checkValidity()) {
         event.preventDefault()
         event.stopPropagation()
       }
       
+//      console.log(pwChk().pwChkisTrue);
+      
       form.classList.add('was-validated')
+      
     }, false)
   })
 })()

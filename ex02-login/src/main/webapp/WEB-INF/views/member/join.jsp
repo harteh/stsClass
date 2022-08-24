@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,15 +30,22 @@
       <div class="col-md-7 col-lg-8 m-auto">
         <h4 class="mb-3">회원 정보</h4>
         <!-- novalidate: 폼화면의 유효성 검사를 하지 않음을 명시한다 -->
-        <form class="needs-validation" role="form" method='post' action="joinProc" novalidate>
+        <form class="needs-validation" role="form" 
+        	method='post' action="joinProc" novalidate
+        	onsubmit="return pwChk();">
           <div class="row g-3">
 			
-            <div class="col-12 mb-3">
+			
+            <div class="col-8 mb-3">
               <label for="email" class="form-label">이메일 </label>
               <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" required>
               <div class="invalid-feedback">
 				로그인에 사용할 이메일을 입력하세요.
               </div>
+            </div>
+            
+            <div class="col-3 pt-3 mb-3">
+              <input type="button" class="btn btn-outline-warning mt-3" onclick="mailChk()" value="이메일 중복확인">
             </div>
           
             <div class="col-12 mb-3">
@@ -50,10 +58,10 @@
               </div>
             </div>
           
-            <!-- <div class="col-sm-6  mb-3"> -->
+            <!-- 비밀번호 같은지 확인하고 싶은데.. -->
             <div class="col-sm  mb-3">
               <label for="password" class="form-label">비밀번호</label>
-              <input type="text" class="form-control" name="password" id="password" placeholder="" value="" required>
+              <input type="password" class="form-control" name="password" id="password" placeholder="" value="" required>
               <div class="invalid-feedback">
 				비밀번호를 입력하세요
               </div>
@@ -61,15 +69,10 @@
 
             <div class="col-sm">
               <label for="password-chk" class="form-label">비밀번호 확인</label>
-              <input type="text" class="form-control" id="password-chk" placeholder="" value="" required>
+              <input type="password" class="form-control" name="chkPwd" id="password-chk" placeholder="" value="" required>
               <div class="invalid-feedback">
 				입력한 비밀번호와 같지 않습니다
               </div>
-            </div>
-
-            <div class="col-sm pt-3 mb-3">
-              <!-- <button type="button" class="btn btn-warning" onclick="pwChk()" value="">비번확인</button> -->
-              <input type="button" class="btn btn-outline-warning mt-3" onclick="pwChk()" value="비번확인">
             </div>
 
             <div class="col-12 mb-3">
@@ -79,12 +82,12 @@
 
             <div class="col-12 mb-3">
               <label for="phone" class="form-label">전화번호 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" name="phone" id="phone" placeholder="010-1234-5678">
+              <input type="tel" class="form-control" name="phone" id="phone" placeholder="010-1234-5678">
             </div>
             
             <!-- 카카오 우편번호 api -->
             <div class="col-6  mb-3">
-              <label for="sample6_postcode" class="form-label">Address <span class="text-muted">(Optional)</span></label>
+              <label for="sample6_postcode" class="form-label">주소 <span class="text-muted">(Optional)</span></label>
 			  <input type="text" class="form-control" name="zip_no" id="sample6_postcode" placeholder="우편번호" readonly>
             </div>
             <div class="col-6 mt-4 pt-2">
