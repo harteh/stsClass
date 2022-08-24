@@ -24,16 +24,18 @@
 						<form role="form" method='post' action="loginProc">
 							<fieldset>
 								<div class="form-group">
-									<input class="form-control" placeholder="userid"
-										name="user_id" type="text" autofocus>
+									<input class="form-control" placeholder="Email"
+										name="email" type="text" autofocus>
 								</div>
 								<div class="form-group">
 									<input class="form-control" placeholder="Password"
 										name="password" type="password" value="">
 								</div>
-								<div class="checkbox">
+								
+								<!-- <div class="checkbox">
 									<label> <input name="remember-me" type="checkbox">Remember Me</label>
-								</div>
+								</div> -->
+								
 								<button class="btn w-100 btn-lg btn-warning " type="submit">로그인</button>
 							</fieldset>
 						</form>

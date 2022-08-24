@@ -16,12 +16,13 @@
 </head>
 <body class="text-center mt-5">
 	<main class="w-50 m-auto ">
-		<h1>마이페이지</h1>
+		<h1>${mem.user_name } 마이페이지</h1>
 			
 			${userID}
-			${mem.user_name } 마이페이지
 			<p>${mem.user_id } // ${mem.nickname } // ${mem.email }</p>
-			<a href="indexMem" class="w-75 btn btn-lg btn-outline-warning">임시메인</a><br><br>
+			<hr class="my-4">
+			
+			<a href="/" class="w-75 btn btn-lg btn-outline-warning">임시메인</a><br><br>
 			<a href="logout" class="w-75 btn btn-lg btn-danger">로그아웃</a><br><br>
 		
 	</main>

@@ -20,28 +20,19 @@ public class MemServiceImpl implements MemService {
 	public MemberVO registerMem(MemberVO member) {
 		// 회원 가입
 		log.info("MemServiceImpl reg ------------");
-//		mapper.joinMem(member);
-		mapper.addMem(member);
+		mapper.joinMem(member);
+//		mapper.addMem(member);
 		return member;
 	}
 
 	@Override
 	public MemberVO getMemById(MemberVO member) {
-		// id로 회원 정보 가져오기
+		// 회원1명 정보 가져오기
 		log.info("MemServiceImpl getMemById ------------");
 		
 		return mapper.getMemById(member);
 	}
 
-
-	@Override
-	public String loginChk(MemberVO member) {
-		// 로그인
-		String user_id = mapper.loginChk(member);
-		return user_id;
-	}
-
-	
 
 
 }

@@ -22,12 +22,6 @@ public class MemController {
 	
 	private MemService service;
 	
-	//임시메인용
-	@GetMapping("/indexMem")
-	public String indexMem() {
-		return "/member/indexMem";
-	}
-	
 	//로그인 폼으로 이동
 	@GetMapping("/login")
 	public String loginForm() {
@@ -37,9 +31,6 @@ public class MemController {
 	//로그인 처리
 	@PostMapping("/loginProc")
 	public String loginProc(@ModelAttribute MemberVO member, HttpSession session) {
-		
-		String user_id = service.loginChk(member);	//확인용
-		log.info("loginProc user_id = " + user_id);
 		
 		MemberVO loginMem = service.getMemById(member);
 		log.info("loginProc loginMem = " + loginMem);
@@ -51,7 +42,7 @@ public class MemController {
 			// ================
 			// 로그인 성공 하면 service에서 반환 받은 loginMem 을 세션에 담아서 메인 페이지로 이동한다
 			session.setAttribute("mem", loginMem);
-			return "redirect:/member/indexMem";
+			return "redirect:/";
 		}
 	}
 	
@@ -59,7 +50,7 @@ public class MemController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "redirect:/member/indexMem";
+		return "redirect:/";
 	}
 	
 	//마이페이지 이동
@@ -79,11 +70,7 @@ public class MemController {
 	@PostMapping("/joinProc")
 	public String joinProc(MemberVO member) {
 		log.info("1. joinProc member ========== " + member);
-		
 		service.registerMem(member); 
-		
-//		log.info("joinProc ----------- " + regMem);
-//		log.info("joinProc ----------- " + regMem.getEmail());
 		
 		return "redirect:/member/login";
 	}

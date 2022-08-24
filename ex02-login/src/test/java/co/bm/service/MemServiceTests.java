@@ -34,9 +34,5 @@ public class MemServiceTests {
 		log.info(service.getMemById(member));
 	}
 	
-	@Test
-	public void testGetMemList() {
-		MemberVO member = new MemberVO();
-		log.info(service.loginChk(member));
-	}
+
 }

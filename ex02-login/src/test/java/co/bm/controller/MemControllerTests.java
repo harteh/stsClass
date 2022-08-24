@@ -48,5 +48,16 @@ public class MemControllerTests {
 
 		log.info(resultMem);
 	}
+	
+	//로그인 테스트
+	@Test
+	public void testLoginProc() throws Exception {
+		String resultMem = mockMvc.perform(MockMvcRequestBuilders.post("/member/loginProc")
+				.param("email", "test1@naver.com")
+				.param("password", "1111")
+				).andReturn().getModelAndView().getViewName();
+
+		log.info(resultMem);
+	}
 
 }
