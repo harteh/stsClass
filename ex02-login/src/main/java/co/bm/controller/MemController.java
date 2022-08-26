@@ -4,11 +4,13 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import co.bm.domain.MemberVO;
 import co.bm.service.MemService;
@@ -77,6 +79,20 @@ public class MemController {
 		service.registerMem(member); 
 		return "redirect:/member/login";
 	}
+	
+	
+	
+	//메일 중복 확인
+	@GetMapping("/mailChk")
+	public void mailChk(@RequestParam("email") String email) {
+		service.mailChk(email);
+		log.info(email);
+		log.info("chkMail: " + service.mailChk(email));
+		
+//		return "/member/mailChk";
+	}
+	
+	
 	
 
 }

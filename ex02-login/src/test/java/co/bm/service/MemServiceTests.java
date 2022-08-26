@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import co.bm.domain.MemberVO;
+import co.bm.service.MemService;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 

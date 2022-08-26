@@ -1,7 +1,5 @@
 package co.bm.service;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import co.bm.domain.MemberVO;
@@ -31,6 +29,15 @@ public class MemServiceImpl implements MemService {
 		log.info("MemServiceImpl getMemById ------------");
 		
 		return mapper.getMemById(member);
+	}
+
+	@Override
+	public int mailChk(String email) {
+		// 메일주소 count 수 반환받기
+		int mailCNT;
+		mailCNT = mapper.mailChk(email);
+		
+		return mailCNT;
 	}
 
 

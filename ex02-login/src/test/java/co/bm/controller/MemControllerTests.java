@@ -59,5 +59,15 @@ public class MemControllerTests {
 
 		log.info(resultMem);
 	}
+	
+	//중복 메일 확인 테스트
+	@Test
+	public void testMailChk() throws Exception {
+		String resultMem = mockMvc.perform(MockMvcRequestBuilders.get("/member/mailChk")
+				.param("email", "test1@naver.com")
+				).andReturn().getModelAndView().getViewName();
+
+		log.info(resultMem);
+	}
 
 }

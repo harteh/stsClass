@@ -31,4 +31,9 @@
 		#{password}, #{user_name}, #{phone}, #{addr}, #{addr2}, #{zip_no})
 	</insert>	
 
+	<!-- 입력받은 메일주소가 있는지 확인한다.  -->
+	<select id="mailChk" resultType="int">
+		select count(*) from pj_user 
+		where email = #{email}
+	</select>
 </mapper>
